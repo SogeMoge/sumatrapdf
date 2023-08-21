@@ -4756,8 +4756,22 @@ static LRESULT FrameOnCommand(MainWindow* win, HWND hwnd, UINT msg, WPARAM wp, L
             break;
 
         case CmdDarkMode:
-            gRenderCache.textColor = ((0xffffff & 0x0000FF) << 16) | (0xffffff & 0x00FF00) | ((0xffffff & 0xFF0000) >> 16);
-            gRenderCache.backgroundColor = ((0x000000 & 0x0000FF) << 16) | (0x000000 & 0x00FF00) | ((0x000000 & 0xFF0000) >> 16);
+            gRenderCache.textColor =
+                ((0xffffff & 0x0000FF) << 16) | (0xffffff & 0x00FF00) | ((0xffffff & 0xFF0000) >> 16);
+            gRenderCache.backgroundColor =
+                ((0x000000 & 0x0000FF) << 16) | (0x000000 & 0x00FF00) | ((0x000000 & 0xFF0000) >> 16);
+            RerenderEverything();
+            break;
+
+        case CmdReadMode:
+            gRenderCache.textColor = 0x000000;
+            gRenderCache.backgroundColor = RGB(237, 209, 176); //[peach]
+            RerenderEverything();
+            break;
+
+        case CmdDefaultMode:
+            gRenderCache.textColor = 0x000000;
+            gRenderCache.backgroundColor = 0xffffff;
             RerenderEverything();
             break;
 

@@ -82,7 +82,9 @@ static ToolbarButtonInfo gToolbarButtons[] = {
     {TbIcon::SearchNext, CmdFindNext, _TRN("Find Next")},
     {TbIcon::MatchCase, CmdFindMatch, _TRN("Match Case")},
     {TbIcon::None, CmdInfoText, nullptr}, // info text
-    {TbIcon::DarkMode,CmdDarkMode,_TRN("dark mode")},
+    {TbIcon::DarkMode, CmdDarkMode, _TRN("Dark mode")},
+    {TbIcon::ReadMode, CmdReadMode, _TRN("Reading mode")},
+    {TbIcon::DefaultMode, CmdDefaultMode, _TRN("Default mode")},
 };
 
 constexpr int kButtonsCount = dimof(gToolbarButtons);
